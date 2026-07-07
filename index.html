@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="theme-color" content="#f8a5c2" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="研芽" />
+<title>研芽 · 30天语文备考计划</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="assets/icon-192.png" />
+<link rel="icon" type="image/png" href="assets/icon-192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<div id="app">
+
+  <!-- 欢迎页 -->
+  <section id="view-onboard" class="view">
+    <div class="onboard-wrap">
+      <div class="onboard-art">
+        <div class="float-petal p1"></div>
+        <div class="float-petal p2"></div>
+        <div class="float-petal p3"></div>
+        <div class="float-petal p4"></div>
+        <div class="onboard-logo">🌸</div>
+      </div>
+      <h1 class="onboard-title">研 芽</h1>
+      <p class="onboard-sub">陪你 30 天，把基础一点一点夯实</p>
+      <p class="onboard-desc">西华师范大学 · 学科教学（语文）<br/>基础夯实 · 6 学 1 复盘 · 每天都有可交付</p>
+      <button class="btn-primary onboard-start" onclick="startOnboard()">开始这 30 天</button>
+      <p class="onboard-note">数据仅保存在本机，安心记录你的每一次努力 ✨</p>
+    </div>
+  </section>
+
+  <!-- 主应用 -->
+  <div id="shell" class="hidden">
+
+    <main id="page-container">
+      <!-- 首页 -->
+      <section id="view-home" class="view active"></section>
+      <!-- 30天计划 -->
+      <section id="view-plan" class="view"></section>
+      <!-- 今日打卡 -->
+      <section id="view-check" class="view"></section>
+      <!-- 复盘 -->
+      <section id="view-review" class="view"></section>
+      <!-- 我的 -->
+      <section id="view-me" class="view"></section>
+    </main>
+
+    <!-- 底部导航 -->
+    <nav id="tabbar">
+      <button class="tab active" data-view="home" onclick="switchView('home')"><span class="tab-ico">🏠</span><span class="tab-label">首页</span></button>
+      <button class="tab" data-view="plan" onclick="switchView('plan')"><span class="tab-ico">📅</span><span class="tab-label">30天</span></button>
+      <button class="tab check-tab" data-view="check" onclick="switchView('check')"><span class="tab-ico chk">✓</span><span class="tab-label">打卡</span></button>
+      <button class="tab" data-view="review" onclick="switchView('review')"><span class="tab-ico">📝</span><span class="tab-label">复盘</span></button>
+      <button class="tab" data-view="me" onclick="switchView('me')"><span class="tab-ico">🌷</span><span class="tab-label">我的</span></button>
+    </nav>
+
+    <!-- 浮动番茄钟入口 -->
+    <button id="pomo-fab" onclick="openPomodoro()">🍅</button>
+  </div>
+
+  <!-- 弹层：每日详情 -->
+  <div id="modal-mask" class="modal-mask hidden" onclick="closeModal(event)"></div>
+  <div id="day-modal" class="modal hidden"></div>
+
+  <!-- 番茄钟 -->
+  <div id="pomo-modal" class="modal hidden"></div>
+
+  <!-- 提示 -->
+  <div id="toast" class="toast hidden"></div>
+
+  <!-- 撒花画布 -->
+  <canvas id="confetti" class="confetti"></canvas>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
