@@ -5,6 +5,23 @@
 > 在线使用：[打开研芽](https://yusheng266186-beep.github.io/yanya-planner/)  
 > GitHub：[查看源代码](https://github.com/yusheng266186-beep/yanya-planner)
 
+<!-- project-navigation:start -->
+## 项目概览
+
+| 项目 | 说明 |
+| --- | --- |
+| 分类 | 教学分析与备考 |
+| 平台 | 浏览器 / PWA |
+| 当前定位 | 学习计划与打卡工具 |
+
+将学科教学（语文）方向的备考计划、每日打卡、专注与复盘放在一个 PWA 中。
+
+[在线体验](https://yusheng266186-beep.github.io/yanya-planner/) · [使用与开发](#使用方式) · [项目总导航](https://github.com/yusheng266186-beep/yusheng266186-beep)
+
+**阅读导航：** [使用方式](#使用方式) · [数据与隐私](#数据与隐私) · [目录结构](#目录结构)
+
+<!-- project-navigation:end -->
+
 ## 项目定位
 
 “研芽”服务于西华师范大学学科教学（语文）方向的 30 天基础夯实计划。它把“今天要学什么”拆成可执行、可勾选、可复盘的步骤，适合手机使用，也可以添加到安卓主屏幕作为 PWA 使用。
